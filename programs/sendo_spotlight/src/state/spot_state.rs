@@ -11,4 +11,9 @@ pub struct SpotState {
 	pub total_refunded: u64,
 	pub is_settled: bool,
 	pub bump: u8,
+	// Metadata fields (for demonstration/prototype only - should remain off-chain in production)
+	pub logo: String,
+	pub url: String,
+	pub description: String,
+	pub name: String,
 }

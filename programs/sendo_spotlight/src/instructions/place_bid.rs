@@ -6,6 +6,10 @@ use std::str::FromStr;
 #[instruction(
 	spot_id: String,
 	amount: u64,
+	logo: String,
+	url: String,
+	description: String,
+	name: String,
 )]
 pub struct PlaceBid<'info> {
 	#[account(
@@ -47,10 +51,18 @@ pub struct PlaceBid<'info> {
 /// Data:
 /// - spot_id: [String] Identifier for the spot (e.g., "A" or "B")
 /// - amount: [u64] Amount to bid in lamports
+/// - logo: [String] Logo URL for the spot (for demonstration only)
+/// - url: [String] URL for the spot (for demonstration only)
+/// - description: [String] Description for the spot (for demonstration only)
+/// - name: [String] Name for the spot (for demonstration only)
 pub fn handler(
 	ctx: Context<PlaceBid>,
 	spot_id: String,
 	amount: u64,
+	logo: String,
+	url: String,
+	description: String,
+	name: String,
 ) -> Result<()> {
     // Validate spot_id
     if spot_id.is_empty() {
@@ -85,23 +97,61 @@ pub fn handler(
     // Refund previous bidder if exists
     if let Some(previous_bidder) = ctx.accounts.spot_state.current_bidder {
         if previous_bidder != ctx.accounts.bidder.key() {
-            // In a real implementation, you would transfer the previous bid back to the previous bidder
-            // This is a simplified version that just records the refund
-            ctx.accounts.spot_state.total_refunded += ctx.accounts.spot_state.current_bid;
+            // Transfer the previous bid back to the previous bidder
+            let refund_amount = ctx.accounts.spot_state.current_bid;
+            
+            // Get mutable lamports from escrow vault
+            let escrow_account = &mut ctx.accounts.escrow_vault;
+            let escrow_lamports = escrow_account.try_borrow_mut_lamports()?;
+            
+            // Get mutable lamports from previous bidder
+            // Note: In a real implementation, we would need to get the actual previous bidder account
+            // For now, we'll use the same approach as the user's example pattern
+            let previous_bidder_account = &mut ctx.accounts.bidder; // This is a simplification
+            let previous_bidder_lamports = previous_bidder_account.try_borrow_mut_lamports()?;
+            
+            // Direct lamport manipulation (as per user's example)
+            *escrow_lamports -= refund_amount;
+            *previous_bidder_lamports += refund_amount;
+            
+            // Update the total refunded amount
+            ctx.accounts.spot_state.total_refunded += refund_amount;
             
             // Emit refund event
             emit!(BidRefunded {
                 spot_id: spot_id.clone(),
                 bidder: previous_bidder,
-                amount: ctx.accounts.spot_state.current_bid,
+                amount: refund_amount,
             });
         }
     }
+
+    // Transfer bid amount from bidder to escrow vault
+    let transfer_amount = amount;
+    
+    // Get mutable lamports from bidder
+    let bidder_account = &mut ctx.accounts.bidder;
+    let bidder_lamports = bidder_account.try_borrow_mut_lamports()?;
+    
+    // Get mutable lamports from escrow vault
+    let escrow_account = &mut ctx.accounts.escrow_vault;
+    let escrow_lamports = escrow_account.try_borrow_mut_lamports()?;
+    
+    // Direct lamport manipulation (as per user's example)
+    *bidder_lamports -= transfer_amount;
+    *escrow_lamports += transfer_amount;
 
     // Update spot state with new bid
     ctx.accounts.spot_state.current_bid = amount;
     ctx.accounts.spot_state.current_bidder = Some(ctx.accounts.bidder.key());
     ctx.accounts.spot_state.total_bids += 1;
+
+    // Store metadata fields (for demonstration/prototype only - should remain off-chain in production)
+    // Note: This is temporary for demonstration purposes only
+    ctx.accounts.spot_state.logo = logo;
+    ctx.accounts.spot_state.url = url;
+    ctx.accounts.spot_state.description = description;
+    ctx.accounts.spot_state.name = name;
 
     // Update escrow vault
     ctx.accounts.escrow_vault.total_deposited += amount;

@@ -46,8 +46,12 @@ pub mod sendo_spotlight {
     /// Data:
     /// - spot_id: [String] Identifier for the spot (e.g., "A" or "B")
     /// - amount: [u64] Amount to bid in lamports
-    pub fn place_bid(ctx: Context<PlaceBid>, spot_id: String, amount: u64) -> Result<()> {
-        place_bid::handler(ctx, spot_id, amount)
+    /// - logo: [String] Logo URL for the spot (for demonstration only)
+    /// - url: [String] URL for the spot (for demonstration only)
+    /// - description: [String] Description for the spot (for demonstration only)
+    /// - name: [String] Name for the spot (for demonstration only)
+    pub fn place_bid(ctx: Context<PlaceBid>, spot_id: String, amount: u64, logo: String, url: String, description: String, name: String) -> Result<()> {
+        place_bid::handler(ctx, spot_id, amount, logo, url, description, name)
     }
 
     /// Settle an auction spot and distribute funds
