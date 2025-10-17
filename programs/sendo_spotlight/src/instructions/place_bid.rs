@@ -1,6 +1,6 @@
 use crate::*;
 use anchor_lang::prelude::*;
-use std::str::FromStr;
+use anchor_lang::system_program::{transfer, Transfer};
 
 #[derive(Accounts)]
 #[instruction(
@@ -37,7 +37,11 @@ pub struct PlaceBid<'info> {
 	)]
 	pub escrow_vault: Account<'info, EscrowVault>,
 
+	#[account(mut)]
 	pub bidder: Signer<'info>,
+
+	/// CHECK: System program for SOL transfers
+	pub system_program: Program<'info, System>,
 }
 
 /// Place a bid on an auction spot
@@ -100,19 +104,9 @@ pub fn handler(
             // Transfer the previous bid back to the previous bidder
             let refund_amount = ctx.accounts.spot_state.current_bid;
             
-            // Get mutable lamports from escrow vault
-            let escrow_account = &mut ctx.accounts.escrow_vault;
-            let escrow_lamports = escrow_account.try_borrow_mut_lamports()?;
-            
-            // Get mutable lamports from previous bidder
-            // Note: In a real implementation, we would need to get the actual previous bidder account
-            // For now, we'll use the same approach as the user's example pattern
-            let previous_bidder_account = &mut ctx.accounts.bidder; // This is a simplification
-            let previous_bidder_lamports = previous_bidder_account.try_borrow_mut_lamports()?;
-            
-            // Direct lamport manipulation (as per user's example)
-            *escrow_lamports -= refund_amount;
-            *previous_bidder_lamports += refund_amount;
+    // Transfer SOL from escrow vault to previous bidder using direct lamport manipulation
+    **ctx.accounts.escrow_vault.to_account_info().try_borrow_mut_lamports()? -= refund_amount;
+    **ctx.accounts.bidder.try_borrow_mut_lamports()? += refund_amount;
             
             // Update the total refunded amount
             ctx.accounts.spot_state.total_refunded += refund_amount;
@@ -129,17 +123,14 @@ pub fn handler(
     // Transfer bid amount from bidder to escrow vault
     let transfer_amount = amount;
     
-    // Get mutable lamports from bidder
-    let bidder_account = &mut ctx.accounts.bidder;
-    let bidder_lamports = bidder_account.try_borrow_mut_lamports()?;
-    
-    // Get mutable lamports from escrow vault
-    let escrow_account = &mut ctx.accounts.escrow_vault;
-    let escrow_lamports = escrow_account.try_borrow_mut_lamports()?;
-    
-    // Direct lamport manipulation (as per user's example)
-    *bidder_lamports -= transfer_amount;
-    *escrow_lamports += transfer_amount;
+    // Transfer SOL from bidder to escrow vault using CPI
+    let cpi_accounts = Transfer {
+        from: ctx.accounts.bidder.to_account_info(),
+        to: ctx.accounts.escrow_vault.to_account_info(),
+    };
+    let cpi_program = ctx.accounts.system_program.to_account_info();
+    let cpi_context = CpiContext::new(cpi_program, cpi_accounts);
+    transfer(cpi_context, transfer_amount)?;
 
     // Update spot state with new bid
     ctx.accounts.spot_state.current_bid = amount;
