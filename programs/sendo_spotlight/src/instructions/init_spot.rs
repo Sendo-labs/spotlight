@@ -15,7 +15,7 @@ pub struct InitSpot<'info> {
 
 	#[account(
 		init,
-		space=97,
+		space=8 + 4 + 32 + 32 + 8 + 8 + 8 + 1 + 32 + 8 + 8 + 1 + 1 + 4 + 32 + 4 + 32 + 4 + 32 + 4 + 32, // 337 bytes total
 		payer=fee_payer,
 		seeds = [
 			b"spot_state",
@@ -27,7 +27,7 @@ pub struct InitSpot<'info> {
 
 	#[account(
 		init,
-		space=39,
+		space=8 + 4 + 32 + 8 + 8 + 1, // discriminator + spot_id (4 + 32) + total_deposited + total_withdrawn + bump
 		payer=fee_payer,
 		seeds = [
 			b"escrow_vault",
@@ -66,6 +66,7 @@ pub fn handler(
 
     // Set up spot state
     ctx.accounts.spot_state.spot_id = spot_id.clone();
+    ctx.accounts.spot_state.admin = ctx.accounts.admin.key();
     ctx.accounts.spot_state.auction_start_time = Clock::get()?.unix_timestamp;
     ctx.accounts.spot_state.auction_end_time = Clock::get()?.unix_timestamp + auction_duration as i64;
     ctx.accounts.spot_state.current_bid = 0;

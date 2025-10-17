@@ -1,0 +1,126 @@
+Streaming transaction logs mentioning 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU. Confirmed commitment
+Transaction executed in slot 6:
+  Signature: 6Aw5M6o5LKqL9vRYpRZAswvUTSSxktAYmeieNPnqdxwwtSCzTkfXLh48gzt9rdDsqxdS4ZFwM3dWKzWURP4oJzR
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: InitSpot
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 16063 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 7:
+  Signature: 6Aw5M6o5LKqL9vRYpRZAswvUTSSxktAYmeieNPnqdxwwtSCzTkfXLh48gzt9rdDsqxdS4ZFwM3dWKzWURP4oJzR
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: InitSpot
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 16063 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 8:
+  Signature: 5eTKi9nFY7KAG5AiZJMQtsW5JyL7wxLY2XYDW4EofWWidFfhqirbVx4AaYdwrhNPohQWabqXEDYYKBwSy8kqHB7g
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: InitSpot
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 32510 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 8:
+  Signature: xTLNZ1DoUyimb4QZvCd3ecuPLaHvUk17UyG93f9KuChWbKikbaJAjfrCLDj6FS1tZK97BRGeTgUyQkxhCUkjnND
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: PlaceBid
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program data: hzWwU8FFbD0RAAAAVEVTVF9TUE9UX0JJRERJTkc8nXoERPP4qwNsH7dAsZ6nbbcTyAUoA3d38NNqKBSXzgDKmjsAAAAA
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 30247 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 9:
+  Signature: xTLNZ1DoUyimb4QZvCd3ecuPLaHvUk17UyG93f9KuChWbKikbaJAjfrCLDj6FS1tZK97BRGeTgUyQkxhCUkjnND
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: PlaceBid
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program data: hzWwU8FFbD0RAAAAVEVTVF9TUE9UX0JJRERJTkc8nXoERPP4qwNsH7dAsZ6nbbcTyAUoA3d38NNqKBSXzgDKmjsAAAAA
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 30247 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 9:
+  Signature: 6JhJ9EjcK4g3hNRudQQGowhpzzA9XC9aqvmaCcwxhoB7NKh4DGZJFturoxH6WEQAeFej9urHAsq9LVrbepMq55t
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: PlaceBid
+    Program data: xWQfukMcLmcRAAAAVEVTVF9TUE9UX0JJRERJTkc8nXoERPP4qwNsH7dAsZ6nbbcTyAUoA3d38NNqKBSXzgDKmjsAAAAA
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program data: hzWwU8FFbD0RAAAAVEVTVF9TUE9UX0JJRERJTkeYqEHzt1pCfdYShpkhrRkW8miCUksPPx7h8LW4FvMmVwCUNXcAAAAA
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 31696 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 10:
+  Signature: 6JhJ9EjcK4g3hNRudQQGowhpzzA9XC9aqvmaCcwxhoB7NKh4DGZJFturoxH6WEQAeFej9urHAsq9LVrbepMq55t
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: PlaceBid
+    Program data: xWQfukMcLmcRAAAAVEVTVF9TUE9UX0JJRERJTkc8nXoERPP4qwNsH7dAsZ6nbbcTyAUoA3d38NNqKBSXzgDKmjsAAAAA
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program data: hzWwU8FFbD0RAAAAVEVTVF9TUE9UX0JJRERJTkeYqEHzt1pCfdYShpkhrRkW8miCUksPPx7h8LW4FvMmVwCUNXcAAAAA
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 31696 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 11:
+  Signature: 9oeNo1ft48uzbim9fStdMSQC5LuMvg1GgcR1YDMzQNUQeV274HL2ZqPSXApQrtHQSn6iJTzB2CqD2CqbvE7UjrH
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: InitSpot
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 21859 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 11:
+  Signature: 4cJ1J2rSgxMSU84Wf9R8ByCoMYFwrjuxhSxQDyam7W1cvVZWgNpmiRm6sqVCHWydVyffKYp52LzdwUMVdWo1XNFx
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: PlaceBid
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program data: hzWwU8FFbD0QAAAAVEVTVF9TUE9UX1NFVFRMRTydegRE8/irA2wft0CxnqdttxPIBSgDd3fw02ooFJfOAF7QsgAAAAA=
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 19776 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 12:
+  Signature: 4cJ1J2rSgxMSU84Wf9R8ByCoMYFwrjuxhSxQDyam7W1cvVZWgNpmiRm6sqVCHWydVyffKYp52LzdwUMVdWo1XNFx
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: PlaceBid
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program data: hzWwU8FFbD0QAAAAVEVTVF9TUE9UX1NFVFRMRTydegRE8/irA2wft0CxnqdttxPIBSgDd3fw02ooFJfOAF7QsgAAAAA=
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 19776 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success
+Transaction executed in slot 17:
+  Signature: 5pT9gn2QAkgJgnYiDQ7cATVSd6PPhCw4e64wMJWcKtm2DEZU6GMY38AYonxnDiWYNnUvmEcusmtczGXX1WRfwe4V
+  Status: Ok
+  Log Messages:
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU invoke [1]
+    Program log: Instruction: Settle
+    Program data: FVM4lvwPRdIQAAAAVEVTVF9TUE9UX1NFVFRMRQE8nXoERPP4qwNsH7dAsZ6nbbcTyAUoA3d38NNqKBSXzgBe0LIAAAAA
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU consumed 25386 of 200000 compute units
+    Program 6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU success

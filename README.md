@@ -38,6 +38,16 @@ The contract distributes funds according to the following split to specific wall
 
 ## Installation and Setup
 
+### Quick Start
+
+To get started quickly:
+
+```bash
+npm i
+anchor build
+anchor test
+```
+
 ### Prerequisites
 
 - Rust 1.60 or later

@@ -13,7 +13,7 @@ pub use state::*;
 pub use events::*;
 pub use error::*;
 
-declare_id!("7DYhVLgmNUY4Lk27pZtZSghoixPG2ueCzBVarHHSF6ud");
+declare_id!("6BmBt2kKtLaZqYjH4juQxHDhMKj8LCLZtoKRiyP9NhJU");
 
 #[program]
 pub mod sendo_spotlight {
