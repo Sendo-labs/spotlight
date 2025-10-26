@@ -12,7 +12,7 @@ workspace = "7DYhVLgmNUY4Lk27pZtZSghoixPG2ueCzBVarHHSF6ud"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "http://local-validator:8899"
+cluster = "localnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]

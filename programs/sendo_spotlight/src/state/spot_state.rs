@@ -3,6 +3,7 @@ use anchor_lang::prelude::*;
 #[account]
 pub struct SpotState {
 	pub spot_id: String,
+	pub admin: Pubkey,
 	pub auction_start_time: i64,
 	pub auction_end_time: i64,
 	pub current_bid: u64,
